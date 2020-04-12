@@ -19,9 +19,6 @@ import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-
 public class Home extends Fragment {
     public static final String TAG = "home";
     private TextView tv;
@@ -61,9 +58,10 @@ public class Home extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         button = (Button) v.findViewById(R.id.button2);
         tekstikentta = (EditText) v.findViewById(R.id.kirjoitusalusta);
-        tv = (TextView) v.findViewById(R.id.teksti);
+        tv = (EditText) v.findViewById(R.id.teksti);
+        //tv = (TextView) v.findViewById(R.id.teksti);
         if (savedInstanceState == null) {
-            tv.setText(alupera);
+           tv.setText(alupera);
         }
             Bundle bundle = getArguments();
             System.out.println(bundle);
@@ -78,20 +76,28 @@ public class Home extends Fragment {
                 tekstipohja = bundle.getString("key1");
                 tekstikentan_teksti = bundle.getString("key2");
                 bold = bundle.getBoolean("bold");
-                //System.out.println(bundle);
+                System.out.println(tekstipohja);
                 if (bold.equals(true)){
                     tekstikentta.setTypeface(null,Typeface.BOLD);
                     tv.setTypeface(null,Typeface.BOLD);
                 }
+                tv.setText(tekstipohja);
                 if (kytkin.equals(true)) {
+
                     tekstikentta.post(new Runnable() {
                         @Override
                         public void run() {
-                            tekstikentta.setText(alupera);
+                            //tekstikentta.setText(alupera);
                         }
                     });
-
-                    tekstikentta.setEnabled(false);
+                    tv.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv.setText(tekstikentan_teksti);
+                        }
+                    });
+                    tv.setEnabled(false);
+                    //tekstikentta.setEnabled(false);
                 } else if (kytkin.equals(false)) {
                     tekstikentta.post(new Runnable() {
                         @Override
@@ -134,9 +140,15 @@ public class Home extends Fragment {
 
 
                 if (nimi.isEmpty() == false) {
-                    tv.setText(nimi);
+                    tv.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            tv.setText(nimi);
+                        }
+                    });
+
                 } else if (nimi.isEmpty() == true) {
-                    tv.setText(alupera);
+                    //tv.setText(alupera);
                 }
             }
 

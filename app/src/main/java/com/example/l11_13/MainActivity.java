@@ -117,7 +117,7 @@ public class MainActivity<val> extends AppCompatActivity implements NavigationVi
                 setLocale(lang);
                 loadLocale(2);
                 recreate();
-            } else if (lang.equals("Englanti") || (lang.equals("English")) || (lang.equals("Engleska"))) {
+            } else if (lang.equals("Englanti") || (lang.equals("English")) || (lang.equals("Engelska"))) {
                 lang = "en_EN";
                 setLocale(lang);
                 loadLocale(1);
@@ -160,6 +160,7 @@ public class MainActivity<val> extends AppCompatActivity implements NavigationVi
     public void sendValueToFragment1(View Viev){
         Bundle bundle = new Bundle();
         String teksti = hm.tekstikentta.getText().toString();
+        System.out.println("*******************"+teksti);
         bundle.putString("key1",teksti);
         bundle.putString("key2",hm.alupera);
         System.out.println(bundle);
@@ -180,7 +181,8 @@ public class MainActivity<val> extends AppCompatActivity implements NavigationVi
             name = st.nimi.getText().toString();
             line = st.rivit.getSelectedItem().toString();
             if (muutos.equals(true)){
-                st.eka = st.toka;
+                //st.eka = st.toka;
+                st.toka = st.eka;
             }
             st.bundle.putString("key1", st.eka);
             st.bundle.putString("key2", st.toka);
