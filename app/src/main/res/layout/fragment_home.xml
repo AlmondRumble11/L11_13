@@ -9,10 +9,9 @@
 
     <TextView
         android:id="@+id/teksti"
-        android:layout_width="374dp"
-        android:layout_height="149dp"
-        android:layout_marginBottom="116dp"
-        android:text="MOI"
+        android:layout_width="347dp"
+        android:layout_height="341dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,14 +20,27 @@
 
     <EditText
         android:id="@+id/kirjoitusalusta"
-        android:layout_width="383dp"
-        android:layout_height="163dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="365dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="160dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Kirjoita tähän jotain..."
+        android:hint="@string/kirjoitusalusta"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:onClick="sendValueToFragment1"
+        android:text="@string/tallenna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L11_13</string>
+    <string name="openNavDrawer">Navigation Drawer Open</string>
+    <string name="closeNavDrawer">Navigation Drawer Close</string>
+    <string name="home">Hem</string>
+    <string name="settings">Inställningar</string>
+    <string name="suomi">Finska</string>
+    <string name="ruotsi">Svenska</string>
+    <string name="englanti">Engelska</string>
+    <string name="muokkaus">Blockera textredigering</string>
+    <string name="riviväli">Avstånd</string>
+    <string name="muuta">Mer</string>
+    <string name="nimi">Ditt Namn</string>
+    <string name="koko">Teckenstorlek</string>
+    <string name="leveys">Typsnittbredd</string>
+    <string name="korkeus">Höjd</string>
+    <string name="kirjoitusalusta">Skriva något här...</string>
+    <string name="tallenna">Spara</string>
+    <string name="muutakieli">Ändra språket</string>
+    <string name="lihavoitu">Fet</string>
+</resources>
